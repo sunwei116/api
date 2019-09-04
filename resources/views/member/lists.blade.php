@@ -65,8 +65,7 @@
     //修改
     $(document).on('click','.edit',function () {
         var id =$(this).attr('mid');
-        var url = "http://w3.wei678.top/api/member/edit";
-        window.location.href=url+'/'+id;
+        window.location.href="http://w.wei678.top/api/edit?id="+id;
     });
 </script>
 </html>
