@@ -67,9 +67,8 @@ class MemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        $id = request()->input('id');
         if (empty($id)){
             return json_encode(['code'=>201,'msg'=>'id不能为空']);
         }
