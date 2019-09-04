@@ -21,5 +21,8 @@ Route::any('member/add', function () {
 Route::any('member/lists', function () {
     return view('member.lists');
 });
+Route::any('member/edit', function () {
+    return view('member.edit');
+});
 Route::resource('/api/member', 'Api\MemberController');
 //Route::any('/api/member', 'Api\MemberController@index');

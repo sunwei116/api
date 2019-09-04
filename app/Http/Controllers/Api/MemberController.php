@@ -69,7 +69,12 @@ class MemberController extends Controller
      */
     public function show($id)
     {
-        //
+        $id = request()->input('id');
+        if (empty($id)){
+            return json_encode(['code'=>201,'msg'=>'id不能为空']);
+        }
+        $res = Member::where('id',$id)->first();
+        return json_encode($res);
     }
 
     /**
@@ -90,9 +95,20 @@ class MemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update()
     {
-        //
+        $name = request()->input('name');
+        $age = request()->input('age');
+        $id = request()->input('id');
+        $member = Member::find($id);
+        $member->name = $name;
+        $member->age = $age;
+        $res = $member->save();
+        if ($res) {
+            return json_encode(['code'=>200,'msg'=>'修改成功']);
+        }else{
+            return json_encode(['code'=>202,'msg'=>'修改失败']);
+        }
     }
 
     /**
