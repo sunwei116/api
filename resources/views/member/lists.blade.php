@@ -71,7 +71,7 @@
     //搜索
     $('.search').on('click',function () {
         var name = $('#ss').val();
-       alert(name);
+       $('#lists').empty();
     });
 </script>
 </html>

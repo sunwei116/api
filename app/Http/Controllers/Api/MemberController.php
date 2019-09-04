@@ -130,6 +130,13 @@ class MemberController extends Controller
 
     public function search()
     {
-        
+        $name = request()->input('name');
+        if (empty($name)){
+          $res = Member::get()->toArray();
+          return json_encode($res);
+        }else{
+           $res = Member::where('name',$name)->get()->toArray();
+           return json_encode($res);
+        }
     }
 }
