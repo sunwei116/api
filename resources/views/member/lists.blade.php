@@ -72,6 +72,16 @@
     $('.search').on('click',function () {
         var name = $('#ss').val();
        $('#lists').empty();
+       var url = "http://w3.wei678.top/api/member";
+       $.ajax({
+           url:url,
+           data:{name:name},
+           dataType:'json',
+           type:'GET',
+           success:function (res) {
+             console.log(res);
+           },
+       });
     });
 </script>
 </html>

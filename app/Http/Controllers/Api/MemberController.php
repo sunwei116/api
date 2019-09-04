@@ -22,7 +22,12 @@ class MemberController extends Controller
         // 响应头设置
         header('Access-Control-Allow-Headers:x-requested-with, content-type');
         // 要求传递的 name hobby以及 model
-        $data = Member::get()->toArray();
+        $name = request()->input('name');
+        if (empty($name)){
+            $data = Member::get()->toArray();
+        }else{
+            $data = Member::where('name',$name)->get()->toArray();
+        }
         return json_encode($data);
     }
 
@@ -128,15 +133,4 @@ class MemberController extends Controller
         }
     }
 
-    public function search()
-    {
-        $name = request()->input('name');
-        if (empty($name)){
-          $res = Member::get()->toArray();
-          return json_encode($res);
-        }else{
-           $res = Member::where('name',$name)->get()->toArray();
-           return json_encode($res);
-        }
-    }
 }
