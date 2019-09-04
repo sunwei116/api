@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\Member;
 
 class MemberController extends Controller
 {
@@ -33,9 +34,23 @@ class MemberController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $name = request()->post('name');
+        $age = request()->post('age');
+
+        if (empty($age) || empty($name)){
+            return json_encode(['code'=>201,'msg'=>'参数不能为空']);
+        }
+        $res = Member::insert([
+            'name' => $name,
+            'age' => $age
+        ]);
+        if ($res) {
+            return json_encode(['code'=>200,'msg'=>'添加成功']);
+        }else{
+            return json_encode(['code'=>202,'msg'=>'添加失败']);
+        }
     }
 
     /**

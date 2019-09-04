@@ -14,5 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+//视图
+Route::any('member/add', function () {
+    return view('member.add');
+});
 Route::resource('/api/member', 'Api\MemberController');
 //Route::any('/api/member', 'Api\MemberController@index');
