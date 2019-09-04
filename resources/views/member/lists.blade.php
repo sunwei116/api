@@ -27,7 +27,7 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    var url = "http://www.wei678.top/api/member";
+    var url = "http://w3.wei678.top/api/member";
     $.ajax({
         url:url,
         dataType:'json',
