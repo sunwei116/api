@@ -23,11 +23,11 @@ class MemberController extends Controller
         header('Access-Control-Allow-Headers:x-requested-with, content-type');
         // 要求传递的 name hobby以及 model
         $name = request()->input('name');
-        if (empty($name)){
-            $data = Member::get()->toArray();
-        }else{
-            $data = Member::where('name',$name)->get()->toArray();
+        $where = [];
+        if (!empty($name)){
+            $where[] = ['name'=>$name];
         }
+        $data = Member::where($where)->get();
         return json_encode($data);
     }
 

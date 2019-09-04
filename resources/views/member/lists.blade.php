@@ -71,7 +71,6 @@
     //搜索
     $('.search').on('click',function () {
         var name = $('#ss').val();
-       $('#lists').empty();
        var url = "http://w3.wei678.top/api/member";
        $.ajax({
            url:url,
@@ -79,7 +78,13 @@
            dataType:'json',
            type:'GET',
            success:function (res) {
-             console.log(res);
+               $('#lists').empty();
+                $.each(res,function(i,v){
+                    var tr = $("<tr></tr>");
+                    tr.append("<td>"+v.name+"</td>");
+                    tr.append("<td>"+v.age+"</td>");
+                    $('#lists').append(tr);
+                })
            },
        });
     });
