@@ -32,7 +32,7 @@
             success:function (res) {
                 if(res.code == 200){
                     alert(res.msg);
-                    window.location.href='http://w3.wei678.top/api/lists';
+                    window.location.href='http://w3.wei678.top/member/lists';
                 }else{
                     alert(res.msg);
                 }
