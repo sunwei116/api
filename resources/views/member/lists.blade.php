@@ -10,6 +10,7 @@
     <title>列表</title>
 </head>
 <body>
+<input type="text" name="name" id="ss"><input type="button" value="搜索" class="search">
 <table border="`">
     <tr>
         <th>姓名</th>
@@ -66,6 +67,11 @@
     $(document).on('click','.edit',function () {
         var id =$(this).attr('mid');
         window.location.href="http://w3.wei678.top/member/edit?id="+id;
+    });
+    //搜索
+    $('.search').on('click',function () {
+        var name = $('#ss').val();
+       alert(name);
     });
 </script>
 </html>

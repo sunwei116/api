@@ -127,4 +127,9 @@ class MemberController extends Controller
             return json_encode(['code'=>202,'msg'=>'删除失败']);
         }
     }
+
+    public function search()
+    {
+        
+    }
 }
