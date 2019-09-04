@@ -14,4 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('/api/member', 'Api\MemberController');
+//Route::resource('/api/member', 'Api\MemberController');
+//Route::any('/api/member', 'Api\MemberController@index');
