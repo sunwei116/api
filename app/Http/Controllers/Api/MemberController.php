@@ -28,6 +28,7 @@ class MemberController extends Controller
             $where[] = ['name'=>$name];
         }
         $data = Member::where($where)->get();
+        dd($data);
         return json_encode($data);
     }
 
