@@ -94,11 +94,10 @@ class MemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update()
+    public function update($id)
     {
         $name = request()->input('name');
         $age = request()->input('age');
-        $id = request()->input('id');
         $member = Member::find($id);
         $member->name = $name;
         $member->age = $age;
