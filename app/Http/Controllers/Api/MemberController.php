@@ -67,7 +67,7 @@ class MemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         $id = request()->input('id');
         if (empty($id)){
