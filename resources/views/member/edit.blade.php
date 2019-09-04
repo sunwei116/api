@@ -48,7 +48,7 @@
         var id = $("[name='id']").val();
         var url = "http://w3.wei678.top/api/member";
         $.ajax({
-            url:url+'/'+'id',
+            url:url+'/'+id,
             data:{name:name,age:age,_method:'PUT'},
             dataType:'json',
             method: 'POST',
