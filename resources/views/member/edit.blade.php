@@ -21,7 +21,7 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    var url = "http://www.wei678.top/api/member";
+    var url = "http://w3.wei678.top/api/member";
     $.ajax({
         url:url+'/'+getQueryVariable('id'),
         dataType:'json',
@@ -46,7 +46,7 @@
         var name = $("[name='name']").val();
         var age = $("[name='age']").val();
         var id = $("[name='id']").val();
-        var url = "http://www.wei678.top/api/member";
+        var url = "http://w3.wei678.top/api/member";
         $.ajax({
             url:url+'/'+'id',
             data:{name:name,age:age,_method:'PUT'},
@@ -55,7 +55,7 @@
             success:function (res) {
                 if(res.code == 200){
                     alert(res.msg);
-                    window.location.href='http://www.wei678.top/api/lists';
+                    window.location.href='http://w3.wei678.top/api/lists';
                 }else{
                     alert(res.msg);
                 }
