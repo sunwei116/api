@@ -23,8 +23,9 @@
     $('.button').on('click',function () {
         var name = $("[name='name']").val();
         var age = $("[name='age']").val();
+        var url = "http://w3.wei678.top/api/member";
         $.ajax({
-            url:"http://w3.wei678.top/api/member/store",
+            url:url,
             data:{name:name,age:age},
             dataType:'json',
             method: 'POST',
